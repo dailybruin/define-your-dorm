@@ -11,7 +11,7 @@
 
     source /usr/local/bin/virtualenvwrapper.sh
     ```
-6. `cd` to the repository directory if not there, and run `mkvirtualenv define-your-dorm`
+6. After reloading your shell, `cd` to the repository directory if not there, and run `mkvirtualenv define-your-dorm`
 7. Run `pip install -r requirements.txt`
 
 
