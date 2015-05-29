@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
-
+{% block title %}
+<title>Define Your Dorm | {{ dorm.name }}</title>
+{% endblock %}
 {% block body %}
 <!-- Header -->
 <header id="top" class="header">
     <div class="text-vertical-center">
-        <h1>Home Page</h1>
-        <h2>This needs to be changed</h2>
+        <h1>{{ dorm.name }}</h1>
+        <h4>Image Url: {{ url_for('static', filename=dorm.image) }}</h4>
         <br>
         <a href="#Dorm" class="btn btn-dark btn-lg">Define Your Dorm</a>
     </div>
