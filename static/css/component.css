@@ -140,6 +140,7 @@
 
 .demo-2 body {
 	background-image: url("http://dailybruin.com/images/2015/06/bg-blur-3.jpeg");
+ /*use this for navy blue background: http://sharepic.org/images/2015/04/13/navy-blue-backgrounds.jpg*/
 	background-repeat: no-repeat;
 	background-attachment: fixed;  
 }
