@@ -44,10 +44,7 @@
                     <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                 </a>
             </li>
-            {% for url, dorm in dorms.iteritems() %}
-            <li>
-                <a href="{{url_for('dorm_page', dorm=url)}}" onclick = $("#menu-close").click(); > {{dorm.name}} </a>
-            {% endfor %}
+
             <li>
                 <a href="#Dorm" onclick = $("#menu-close").click(); >Define Your Dorm</a>
             </li>
@@ -58,7 +55,7 @@
                 <a href="#Quotes" onclick = $("#menu-close").click(); >Quotes</a>
             </li>
             <li>
-                <a href="#" onclick = $("#menu-close").click(); >
+                <a href="/" onclick = $("#menu-close").click(); >
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     Select Another Dorm
                 </a>
