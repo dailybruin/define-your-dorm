@@ -4,19 +4,16 @@ app = Flask(__name__)
 
 # I'm basically defining Dorm as a 'struct' with two fields, name and image
 # in Python, it's a namedtuple
-Dorm = namedtuple('Dorm', 'name image')
+Dorm = namedtuple('Dorm', 'name image subtitle')
 # dorms is a dictionary mapping the url-friendly name to a Dorm object
-dorms = {"rieberterrace": Dorm("Rieber Terrace", 'img/rieberterrace.jpg'),
-         "riebervista": Dorm("Rieber Vista", 'img/riebervista.jpg'),
-         "rieberhall": Dorm("Rieber Hall", 'img/rieberhall.jpg'),
-         "hedrickhall": Dorm("Hedrick Hall", 'img/hedrickhall.jpg'),
-         "hedricksummit": Dorm("Hedrick Summit", 'img/hedricksummit.jpg'),
-         "sproulhall": Dorm("Sproul Hall", 'img/sproulhall.jpg'),
-         "sproulcove": Dorm("Sproul Cove", 'img/sproulcove.jpg'),
-         "sproullanding": Dorm("Sproul Landing", 'img/sproullanding.jpg'),
-         "hitchsuites": Dorm("Hitch Suites", 'img/hitchsuites.jpg'),
-         "dykstrahall": Dorm("Dykstra Hall", 'img/dykstrahall.jpg'),
-         "deneve": Dorm("De Neve Plaza", 'img/deneve.jpg')
+dorms = {"rieber": Dorm("Rieber Court", 'img/rieber.jpg', 'subtitle text'),
+         "hedrick": Dorm("Hedrick Court", 'img/hedrick.jpg', 'subtitle text'),
+         "sproul": Dorm("Sproul Court", 'img/sproul.jpg', 'subtitle text'),
+         "hitchsuites": Dorm("Hitch Suites", 'img/hitchsuites.jpg', 'subtitle text'),
+         "dykstrahall": Dorm("Dykstra Hall", 'img/dykstrahall.jpg', 'subtitle text'),
+         "deneve": Dorm("De Neve Plaza", 'img/deneve.jpg', 'subtitle text'),
+         "deltapoint": Dorm("Delta Terrace & Canyon Point", 'img/deltapoint.jpg', 'subtitle text'),
+         "courtside" : Dorm("Courtside", 'img/courtside.jpg', 'subtitle text') 
          }
 
 
