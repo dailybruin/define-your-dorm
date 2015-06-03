@@ -1,116 +1,72 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en" class="demo-2 no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Define Your Dorm</title>
+		<meta name="description" content="Hover Effects with animated SVG Shapes using Snap.svg" />
+		<meta name="keywords" content="animated svg, hover effect, grid, svg shape html, " />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="{{ url_for('static', filename='fonts/favicon.ico') }}">
+		<link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/demo.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/component.css') }}" rel="stylesheet">
 
-{% block body %}
-<!-- Header -->
-<header id="top" class="header">
-    <div class="text-vertical-center">
-        <h1>Home Page</h1>
-        <h2>This needs to be changed</h2>
-        <br>
-        <a href="#Dorm" class="btn btn-dark btn-lg">Define Your Dorm</a>
-    </div>
-</header>
+		<script src="{{ url_for('static', filename='js/snap.svg-min.js') }}"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
 
-<!-- Dorm -->
-<section id="Dorm" class="Dorm">
-    <div class="container">
-        <div class="row">
-            <div class="class="col-lg-12 text-center"">
-                <form class="lead" >My home away from home is a/an <input autocapitalize="off" id="id_community_adjective" maxlength="50" name="community_adjective" placeholder="adjective" type="text" /> place. I've learned so much about <input autocapitalize="off" id="id_learned_thing" maxlength="50" name="learned_thing_noun" placeholder="noun" type="text" /> and have met so many <input autocapitalize="off" id="id_people_adjective" maxlength="50" name="people_adjective" placeholder="adjective" type="text" /> people. The greatest part about living here is the <input autocapitalize="off" id="id_greatest_part" maxlength="50" name="greatest_part" placeholder="adjective/noun" type="text" />. Of all the amazing dining options available, my favorite place to eat would have to be <input autocapitalize="off" id="id_dining_noun" maxlength="50" name="dining_noun" placeholder="noun" type="text" />. If I had to describe my experience living on the hill, it would be <input autocapitalize="off" id="id_one_word" maxlength="50" name="one_word" placeholder="word" type="text" />.
-                <br>
-                <div class="col-lg-offset-5">
-                    <button type="submit" class="btn btn-dark btn-lg">Submit</button>
-                <button type="reset" class="btn btn-dark btn-lg">Reset</button>
-                </div>
-                
-                </form>
-            </div>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
 
-<!-- Words --> 
-<!-- Placeholders for word clouds: delete this after it's implemented-->
-<section id="Words">
-    <div class="row-fluid col-lg-offset-1">
-        <div class="span7 word-cloud hidden-phone">
-        <p style="font-family: Arial, sans-serif; margin-top:0; font-size: 45px">Top terms: What your neighbors are saying</p>
-    
-        <ul class="words">
-        
-            <li style="font-size: 30.0px">students</li>
-        
-            <li style="font-size: 21.2132034356px">vibrant</li>
-        
-            <li style="font-size: 21.2132034356px">UCLA</li>
-        
-            <li style="font-size: 15.0px">eh</li>
-        
-            <li style="font-size: 15.0px">quiet</li>
-        
-            <li style="font-size: 15.0px">the Hammer Museum and courtyard</li>
-        
-            <li style="font-size: 15.0px">Heaven</li>
-        
-            <li style="font-size: 15.0px">home</li>
-        
-            <li style="font-size: 15.0px">untapped potential</li>
-        
-            <li style="font-size: 15.0px">the ping pong table @hammermuseum</li>
-        
-            <li style="font-size: 15.0px">diddy reese</li>
-        
-            <li style="font-size: 15.0px">movie premieres</li>
-        
-            <li style="font-size: 15.0px">untapped</li>
-        
-            <li style="font-size: 15.0px">movie premiers</li>
-        
-            <li style="font-size: 15.0px">the university</li>
-        
-            <li style="font-size: 15.0px">stans donuts</li>
-        
-            <li style="font-size: 15.0px">an upscale demographic melting pot</li>
-        
-            <li style="font-size: 15.0px">dinner &amp; a movie</li>
-        
-            <li style="font-size: 15.0px">tommy taco</li>
-        
-            <li style="font-size: 15.0px">families</li>
-        
-        </ul>
-    
-    </div>
-    </div>
-    <!-- /.row -->
-</section>
+			<section id="grid" class="grid clearfix">
 
-<!-- Quotes -->
-<!-- Placeholders for Quotes: delete this after it's implemented-->
-<section id="Quotes" class="Quotes">
-    <div class="container">
-        <div class="row">
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
-{% endblock %}
+	            {% for url, dorm in dorms.iteritems() %}
+	                <a href="{{url_for('dorm_page', dorm=url)}}" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z" onclick = $("#menu-close").click(); > 
+	                	<figure>
+						<img src="{{ url_for('static', filename='img/2.png') }}" />
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
+						<figcaption>
+							<h2>{{dorm.name}} </h2>
+							<p>RieberHall, Terrace, Vista</p>
+							<button>View</button>
+						</figcaption>
+						</figure>
+	                </a>
+	            {% endfor %}
+			</section>
+
+		</div><!-- /container -->
+		<script>
+			(function() {
+	
+				function init() {
+					var speed = 330,
+						easing = mina.backout;
+
+					[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+							pathConfig = {
+								from : path.attr( 'd' ),
+								to : el.getAttribute( 'data-path-hover' )
+							};
+
+						el.addEventListener( 'mouseenter', function() {
+							path.animate( { 'path' : pathConfig.to }, speed, easing );
+						} );
+
+						el.addEventListener( 'mouseleave', function() {
+							path.animate( { 'path' : pathConfig.from }, speed, easing );
+						} );
+					} );
+				}
+
+				init();
+
+			})();
+		</script>
+	</body>
+</html>
