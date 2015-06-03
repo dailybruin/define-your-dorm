@@ -50,8 +50,10 @@
     <div class="row-fluid col-lg-offset-1">
         <div class="span7 word-cloud hidden-phone">
         <p style="font-family: Arial, sans-serif; margin-top:0; font-size: 45px">Top terms: What your neighbors are saying</p>
-    
         <ul class="words">
+            {% if not most_common %}
+            <p class="lead">Looks like there aren't any entries yet. Submit one above!</p>
+            {% endif %}
             {% for word in most_common %}
                 <li style="font-size: {{word[1]}}px">{{word[0]}}</li>
             {% endfor %}
