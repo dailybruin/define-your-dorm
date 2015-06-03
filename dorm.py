@@ -1,5 +1,6 @@
 from flask import Flask, render_template, abort, url_for, request, g, redirect
 import os
+import random
 import itertools
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.expression import func
@@ -32,6 +33,9 @@ class Entry(db.Model):
     def __repr__(self):
         return str([self.community_adjective, self.learned_thing_noun, self.people_adjective, self.greatest_part, self.dining_noun, self.one_word])
 
+    def vals(self):
+        return [self.community_adjective, self.learned_thing_noun, self.people_adjective, self.greatest_part, self.dining_noun, self.one_word]
+
 
 class Dorm(object):
 
@@ -58,8 +62,23 @@ dorms = {"rieber": Dorm("Rieber Court", 'img/rieber.jpg', 'subtitle text'),
 def find_most_common(data):
     words = Counter()
     for entry in data:
-        words.update(entry.__dict__.values()[1:7])
-    words.most_common(10)
+        words.update(entry.vals())
+    most_common = words.most_common(10)
+    if len(most_common) == 0:
+        return most_common
+    maxval = most_common[0][1]
+    minval = most_common[-1][1]
+    if maxval == minval:
+        minval = 0.0
+    print maxval
+    print minval
+    result = []
+    for entry in most_common:
+        fontsize = max(15.0, 35.0 * (float(entry[1]) - minval)/(maxval - minval))
+        result.append((entry[0], fontsize))
+    random.shuffle(result)
+    return result
+
 
 
 @app.route('/')
@@ -80,6 +99,7 @@ def dorm_page(dorm, id=None):
         id=id).first()
     # Find the most common words
     most_common = find_most_common(data.all())
+    # random.shuffle(most_common)
     # Only send 5 random entries to the template itself
     data = data.order_by(func.random()).limit(5).all()
     # Then send the Dorm tuple and the associated data to the template

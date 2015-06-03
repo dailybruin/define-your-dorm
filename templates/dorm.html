@@ -52,47 +52,9 @@
         <p style="font-family: Arial, sans-serif; margin-top:0; font-size: 45px">Top terms: What your neighbors are saying</p>
     
         <ul class="words">
-        
-            <li style="font-size: 30.0px">students</li>
-        
-            <li style="font-size: 21.2132034356px">vibrant</li>
-        
-            <li style="font-size: 21.2132034356px">UCLA</li>
-        
-            <li style="font-size: 15.0px">eh</li>
-        
-            <li style="font-size: 15.0px">quiet</li>
-        
-            <li style="font-size: 15.0px">the Hammer Museum and courtyard</li>
-        
-            <li style="font-size: 15.0px">Heaven</li>
-        
-            <li style="font-size: 15.0px">home</li>
-        
-            <li style="font-size: 15.0px">untapped potential</li>
-        
-            <li style="font-size: 15.0px">the ping pong table @hammermuseum</li>
-        
-            <li style="font-size: 15.0px">diddy reese</li>
-        
-            <li style="font-size: 15.0px">movie premieres</li>
-        
-            <li style="font-size: 15.0px">untapped</li>
-        
-            <li style="font-size: 15.0px">movie premiers</li>
-        
-            <li style="font-size: 15.0px">the university</li>
-        
-            <li style="font-size: 15.0px">stans donuts</li>
-        
-            <li style="font-size: 15.0px">an upscale demographic melting pot</li>
-        
-            <li style="font-size: 15.0px">dinner &amp; a movie</li>
-        
-            <li style="font-size: 15.0px">tommy taco</li>
-        
-            <li style="font-size: 15.0px">families</li>
-        
+            {% for word in most_common %}
+                <li style="font-size: {{word[1]}}px">{{word[0]}}</li>
+            {% endfor %}
         </ul>
     
     </div>
