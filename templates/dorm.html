@@ -18,7 +18,8 @@
     <div class="container">
         <div class="row">
             <div class="class="col-lg-12 text-center"">
-                <form class="lead" >My home away from home is a/an <input autocapitalize="off" id="id_community_adjective" maxlength="50" name="community_adjective" placeholder="adjective" type="text" /> place. I've learned so much about <input autocapitalize="off" id="id_learned_thing" maxlength="50" name="learned_thing_noun" placeholder="noun" type="text" /> and have met so many <input autocapitalize="off" id="id_people_adjective" maxlength="50" name="people_adjective" placeholder="adjective" type="text" /> people. The greatest part about living here is the <input autocapitalize="off" id="id_greatest_part" maxlength="50" name="greatest_part" placeholder="adjective/noun" type="text" />. Of all the amazing dining options available, my favorite place to eat would have to be <input autocapitalize="off" id="id_dining_noun" maxlength="50" name="dining_noun" placeholder="noun" type="text" />. If I had to describe my experience living on the hill, it would be <input autocapitalize="off" id="id_one_word" maxlength="50" name="one_word" placeholder="word" type="text" />.
+            {% if current_record == None %}
+                <form method="post" action="{{url_for('store_entry', dorm=url, _anchor='Dorm')}}" class="lead" >My home away from home is a/an <input autocapitalize="off" id="id_community_adjective" maxlength="50" name="community_adjective" placeholder="adjective" type="text" /> place. I've learned so much about <input autocapitalize="off" id="id_learned_thing" maxlength="50" name="learned_thing_noun" placeholder="noun" type="text" /> and have met so many <input autocapitalize="off" id="id_people_adjective" maxlength="50" name="people_adjective" placeholder="adjective" type="text" /> people. The greatest part about living here is the <input autocapitalize="off" id="id_greatest_part" maxlength="50" name="greatest_part" placeholder="adjective/noun" type="text" />. Of all the amazing dining options available, my favorite place to eat would have to be <input autocapitalize="off" id="id_dining_noun" maxlength="50" name="dining_noun" placeholder="noun" type="text" />. If I had to describe my experience living on the hill, it would be <input autocapitalize="off" id="id_one_word" maxlength="50" name="one_word" placeholder="word" type="text" />.
                 <br>
                 <div class="col-lg-offset-5">
                     <button type="submit" class="btn btn-dark btn-lg">Submit</button>
@@ -26,6 +27,16 @@
                 </div>
                 
                 </form>
+            {% else %}
+                <div class="lead">
+                    <p>
+                    My home away from home is a/an <u>{{current_record.community_adjective}}</u> place. I've learned so much about <u>{{current_record.learned_thing_noun}}</u> and have met so many <u>{{current_record.people_adjective}}</u> people. The greatest part about living here is the <u>{{current_record.greatest_part}}</u>. Of all the amazing dining options available, my favorite place to eat would have to be <u>{{current_record.dining_noun}}</u>. If I had to describe my experience living on the hill, it would be <u>{{current_record.one_word}}</u>.</p>
+                    <div class="col-lg-offset-5">
+                        <a href="{{url_for('dorm_page', dorm=url)}}" class="btn btn-dark btn-lg">Write Another</a>
+                    </div>
+                </div>
+
+            {% endif %}
             </div>
         </div>
         <!-- /.row -->
@@ -94,22 +105,13 @@
 <section id="Quotes" class="Quotes">
     <div class="container">
         <div class="row">
+        {% for record in data %}
             <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                <p>
+                    My home away from home is a/an <u>{{record.community_adjective}}</u> place. I've learned so much about <u>{{record.learned_thing_noun}}</u> and have met so many <u>{{record.people_adjective}}</u> people. The greatest part about living here is the <u>{{record.greatest_part}}</u>. Of all the amazing dining options available, my favorite place to eat would have to be <u>{{record.dining_noun}}</u>. If I had to describe my experience living on the hill, it would be <u>{{record.one_word}}</u>.</p>
+                </p>
             </blockquote>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
+        {% endfor %}
         </div>
         <!-- /.row -->
     </div>
