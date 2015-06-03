@@ -51,6 +51,9 @@ a:hover, a:focus {
 	font-size: 200%;
 }
 
+
+
+
 .codrops-header h1 {
 	margin: 0;
 	font-weight: 300;
@@ -141,6 +144,55 @@ a:hover, a:focus {
 .related {
 	text-align: center;
 	font-size: 1.5em;
+}
+
+#nav {
+text-align:center;
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#dblogo {
+	position: fixed;
+	left: 0;
+	border: 0;
+    padding:5px;
+	height: 50px;
+}
+
+#defineyourdormlogo {
+	padding: 5px;
+	height: 50px;
+}
+
+#social-buttons {
+	position: fixed;
+	right: 10px;
+	border: 0;
+	padding: 10px;
+	height: 40px;
+	top: -12px;
+}
+
+#content-credit {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
 }
 
 @media screen and (max-width: 25em) {
