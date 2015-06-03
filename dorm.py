@@ -1,10 +1,30 @@
-from flask import Flask, render_template, abort, url_for, request
+from flask import Flask, render_template, abort, url_for, request, g
+import os
+from flask.ext.sqlalchemy import SQLAlchemy
 from collections import namedtuple
 app = Flask(__name__)
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'entries.db')
+db = SQLAlchemy(app)
 
-# I'm basically defining Dorm as a 'struct' with two fields, name and image
-# in Python, it's a namedtuple
-Dorm = namedtuple('Dorm', 'name image subtitle')
+class Entry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    dorm = db.Column(db.String(30))
+    text = db.Column(db.Text)
+
+    def __init__(self, dorm, text):
+        self.dorm = dorm
+        self.text = text
+
+    def __repr__(self):
+        return '<Dorm: %r> %r' % self.dorm, self.text
+
+class Dorm(object):
+    def __init__(self, name, image, subtitle):
+        self.name = name
+        self.image = image
+        self.subtitle = subtitle
+
 # dorms is a dictionary mapping the url-friendly name to a Dorm object
 dorms = {"rieber": Dorm("Rieber Court", 'img/rieber.jpg', 'subtitle text'),
          "hedrick": Dorm("Hedrick Court", 'img/hedrick.jpg', 'subtitle text'),
