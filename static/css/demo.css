@@ -184,6 +184,8 @@ text-align:center;
 #content-credit {
 	text-align: center;
 	padding-bottom: 20px;
+	font-weight: 300;
+	font-family: Lato, Arial, sans-serif;
 }
 
 ul.share-buttons{
