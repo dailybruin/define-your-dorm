@@ -32,6 +32,8 @@
                 <div class="lead">
                     <p>
                     My home away from home is a/an <u>{{current_record.community_adjective}}</u> place. I've learned so much about <u>{{current_record.learned_thing_noun}}</u> and have met so many <u>{{current_record.people_adjective}}</u> people. The greatest part about living here is the <u>{{current_record.greatest_part}}</u>. Of all the amazing dining options available, my favorite place to eat would have to be <u>{{current_record.dining_noun}}</u>. If I had to describe my experience living on the hill, it would be <u>{{current_record.one_word}}</u>.</p>
+                    <p class="pull-right">&mdash; {%if current_record.username[0] == '@' %}<a href="http://twitter.com/{{current_record.username[1:]}}" target="_blank">{{current_record.username}}</a>{% else %}{{current_record.username}}{% endif %}
+                    </p><br />
                     <div class="col-lg-offset-5">
                         <a href="{{url_for('dorm_page', dorm=url)}}" class="btn btn-dark btn-lg">Write Another</a>
                     </div>
@@ -75,6 +77,13 @@
                 <p>
                     My home away from home is a/an <u>{{record.community_adjective}}</u> place. I've learned so much about <u>{{record.learned_thing_noun}}</u> and have met so many <u>{{record.people_adjective}}</u> people. The greatest part about living here is the <u>{{record.greatest_part}}</u>. Of all the amazing dining options available, my favorite place to eat would have to be <u>{{record.dining_noun}}</u>. If I had to describe my experience living on the hill, it would be <u>{{record.one_word}}</u>.</p>
                 </p>
+                <footer>
+                        {%if record.username[0] == '@' %}
+                        <a href="http://twitter.com/{{record.username[1:]}}" target="_blank">{{record.username}}</a>
+                        {% else %}
+                        {{record.username}}
+                        {% endif %}
+                        </footer>
             </blockquote>
         {% endfor %}
         </div>
