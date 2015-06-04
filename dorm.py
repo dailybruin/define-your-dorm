@@ -111,7 +111,7 @@ def dorm_page(dorm, id=None):
 
 @app.route('/<dorm>/submit', methods=['POST'])
 def store_entry(dorm):
-    if len(request.form) != 6:  # something's fishy...make them try again
+    if len(request.form) != 7:  # something's fishy...make them try again
         # should probably show an error
         return redirect(url_for('dorm_page', dorm=dorm))
     e = Entry(dorm, request.form)
