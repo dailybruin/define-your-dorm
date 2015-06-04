@@ -18,6 +18,7 @@ class Entry(db.Model):
     __tablename__ = "entries"
     id = db.Column(db.Integer, primary_key=True)
     dorm = db.Column(db.String(50))
+    username = db.Column(db.String(50))
     community_adjective = db.Column(db.String(50))
     learned_thing_noun = db.Column(db.String(50))
     people_adjective = db.Column(db.String(50))
