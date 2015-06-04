@@ -75,11 +75,11 @@ def find_most_common(data):
     print minval
     result = []
     for entry in most_common:
-        fontsize = max(15.0, 35.0 * (float(entry[1]) - minval)/(maxval - minval))
+        fontsize = max(
+            15.0, 35.0 * (float(entry[1]) - minval) / (maxval - minval))
         result.append((entry[0], fontsize))
     random.shuffle(result)
     return result
-
 
 
 @app.route('/')
@@ -106,9 +106,8 @@ def dorm_page(dorm, id=None):
     # Then send the Dorm tuple and the associated data to the template
     return render_template('dorm.html', url=dorm, dorm=dorms[dorm], data=data, most_common=most_common, current_record=current_record)
 
+
 # Route for processing the form data
-
-
 @app.route('/<dorm>/submit', methods=['POST'])
 def store_entry(dorm):
     if len(request.form) != 7:  # something's fishy...make them try again
