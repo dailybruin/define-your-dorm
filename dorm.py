@@ -140,5 +140,4 @@ def inject_dorms():
 
 # actually run Flask
 if __name__ == '__main__':
-    app.secret_key = "KcjKwI35Gee6eJYbkX9l"
     app.run()
