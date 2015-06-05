@@ -74,8 +74,6 @@ def find_most_common(data):
     minval = most_common[-1][1]
     if maxval == minval:
         minval = 0.0
-    print maxval
-    print minval
     result = []
     for entry in most_common:
         fontsize = max(
@@ -124,13 +122,13 @@ def store_entry(dorm):
     e = Entry(dorm, request.form)
     db.session.add(e)
     db.session.commit()
-    return redirect(url_for('dorm_page', dorm=dorm, id=e.id))
+    return redirect(url_for('dorm_page', dorm=dorm, id=e.id, _anchor='Dorm'))
 
 
-@app.errorhandler(404)
-def error(e):
-    # Return render_template('404.html'), 404
-    return "404 page not found"  # for now
+# @app.errorhandler(404)
+# def error(e):
+#     # Return render_template('404.html'), 404
+#     return "404 page not found"  # for now
 
 
 # Make the dorms variable available to all templates without having
