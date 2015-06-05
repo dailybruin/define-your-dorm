@@ -1,4 +1,5 @@
-from flask import Flask, render_template, abort, url_for, request, g, redirect
+from flask import Flask, render_template, abort, url_for, request, g, redirect, flash
+from badwords import isBadWord
 import os
 import random
 import itertools
@@ -111,8 +112,13 @@ def dorm_page(dorm, id=None):
 @app.route('/<dorm>/submit', methods=['POST'])
 def store_entry(dorm):
     if len(request.form) != 7:  # something's fishy...make them try again
-        # should probably show an error
-        return redirect(url_for('dorm_page', dorm=dorm))
+        flash("Something was wrong with your submission. Please try again!")
+        return redirect(url_for('dorm_page', dorm=dorm, _anchor='Dorm'))
+    for field in request.form.values():
+        for word in field.split():
+            if isBadWord(word):
+                flash("Looks like our filters didn't accept your message. Please try again!")
+                return redirect(url_for('dorm_page', dorm=dorm, _anchor='Dorm'))
     e = Entry(dorm, request.form)
     db.session.add(e)
     db.session.commit()
@@ -134,4 +140,5 @@ def inject_dorms():
 
 # actually run Flask
 if __name__ == '__main__':
+    app.secret_key = "KcjKwI35Gee6eJYbkX9l"
     app.run()
