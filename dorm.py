@@ -31,6 +31,8 @@ class Entry(db.Model):
         self.dorm = dorm
         for key in data:
             setattr(self, key, data[key])
+        if self.username == "":
+            self.username = "Anonymous"
 
     def __repr__(self):
         return str([self.community_adjective, self.learned_thing_noun, self.people_adjective, self.greatest_part, self.dining_noun, self.one_word])
