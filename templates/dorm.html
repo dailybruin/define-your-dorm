@@ -4,7 +4,10 @@
 {% endblock %}
 {% block body %}
 <!-- Header -->
-<header id="top" class="header">
+<header id="top" class="header" style="background: url({{dorm.image}}) no-repeat center center scroll; -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;">
     <div class="text-vertical-center">
         <h1>{{ dorm.name }}</h1>
         <h4>Image Url: {{ url_for('static', filename=dorm.image) }}</h4>
