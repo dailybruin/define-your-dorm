@@ -49,14 +49,14 @@ class Dorm(object):
         self.subtitle = subtitle
 
 # dorms is a dictionary mapping the url-friendly name to a Dorm object
-dorms = {"rieber": Dorm("Rieber Court", 'img/rieber.jpg', 'subtitle text'),
-         "hedrick": Dorm("Hedrick Court", 'img/hedrick.jpg', 'subtitle text'),
-         "sproul": Dorm("Sproul Court", 'img/sproul.jpg', 'subtitle text'),
-         "hitchsuites": Dorm("Hitch Suites", 'img/hitchsuites.jpg', 'subtitle text'),
-         "dykstrahall": Dorm("Dykstra Hall", 'img/dykstrahall.jpg', 'subtitle text'),
-         "deneve": Dorm("De Neve Plaza", 'img/deneve.jpg', 'subtitle text'),
-         "deltapoint": Dorm("Delta Terrace & Canyon Point", 'img/deltapoint.jpg', 'subtitle text'),
-         "courtside": Dorm("Courtside", 'img/courtside.jpg', 'subtitle text')
+dorms = {"rieber": Dorm("Rieber Court", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE3_.jpg', 'Rieber Hall, Terrace, Vista'),
+         "hedrick": Dorm("Hedrick Court", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE2_.jpg', 'Hedrick Hall, Summit'),
+         "sproul": Dorm("Sproul Court", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE9_.jpg', 'Sproul Hall, Cove, Landing'),
+         "hitchsuites": Dorm("Hitch Suites", 'img/hitchsuites.jpg', ''),
+         "dykstrahall": Dorm("Dykstra Hall", 'img/dykstrahall.jpg', ''),
+         "deneve": Dorm("De Neve Plaza", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE6_.jpg', 'De Neve ABCDEFGH'),
+         "deltapoint": Dorm("Delta Terrace & Canyon Point", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE7_.jpg', ''),
+         "courtside": Dorm("Courtside", 'img/courtside.jpg', '')
          }
 
 
