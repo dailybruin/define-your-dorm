@@ -52,11 +52,11 @@ class Dorm(object):
 dorms = {"rieber": Dorm("Rieber Court", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE3_.jpg', 'Rieber Hall, Terrace, Vista'),
          "hedrick": Dorm("Hedrick Court", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE2_.jpg', 'Hedrick Hall, Summit'),
          "sproul": Dorm("Sproul Court", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE9_.jpg', 'Sproul Hall, Cove, Landing'),
-         "hitchsuites": Dorm("Hitch Suites", '', ''),
-         "dykstrahall": Dorm("Dykstra Hall", '', ''),
-         "deneve": Dorm("De Neve Plaza", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE6_.jpg', 'De Neve ABCDEFGH'),
-         "deltapoint": Dorm("Delta Terrace & Canyon Point", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE7_.jpg', ''),
-         "courtside": Dorm("Courtside", '', '')
+         "hitchsuites": Dorm("Hitch Suites", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE11_.jpg', ''),
+         "dykstrahall": Dorm("Dykstra Hall", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE8_.jpg', ''),
+         "deneve": Dorm("De Neve Plaza", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE6_.jpg', 'De Neve Acacia, Birch, Ceder, Dogwood, Evergreen, Fir, Gardenia, Holly'),
+         "deltapoint": Dorm("Delta Terrace & Canyon Point", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE4_.jpg', ''),
+         "courtside": Dorm("Courtside", 'http://dailybruin.com/images/2015/06/web.ns_.today_.living.OE10_.jpg', '')
          }
 
 
