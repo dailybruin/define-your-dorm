@@ -158,6 +158,11 @@ text-align:center;
     border-bottom-width: 1px;
 }
 
+.image-wrapper
+{
+	position: relative;
+}
+
 #dblogo {
 	position: fixed;
 	left: 0;
@@ -166,6 +171,8 @@ text-align:center;
 	height: 50px;
 }
 #dorm-banner-logo {
+	width: auto;
+	max-width: 75%;
     padding: 5px;
     height: 60px;
 }
