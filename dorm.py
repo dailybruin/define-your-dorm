@@ -1,20 +1,35 @@
-from flask import Flask, render_template, abort, url_for, request, g, redirect, flash
+from flask import Flask, render_template, abort, url_for, request, redirect, flash
 from badwords import isBadWord
 import os
 import random
-import itertools
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.expression import func
-from collections import namedtuple, Counter
+from collections import Counter
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
     os.path.join(basedir, 'entries.db')
 db = SQLAlchemy(app)
 
+
+
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                     endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+    return url_for(endpoint, **values)
+
+
+
 # Class for an entry in the database
-
-
 class Entry(db.Model):
     __tablename__ = "entries"
     id = db.Column(db.Integer, primary_key=True)
