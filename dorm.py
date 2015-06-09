@@ -129,8 +129,12 @@ def store_entry(dorm):
     if len(request.form) != 7:  # something's fishy...make them try again
         flash("Something was wrong with your submission. Please try again!")
         return redirect(url_for('dorm_page', dorm=dorm, _anchor='Dorm'))
-    for field in request.form.values():
-        for word in field.split():
+    for key, value in request.form.iteritems():
+        if key != 'username':
+            if len(value) < 1:
+                flash("Looks like you left a field empty. Please try again!")
+                return redirect(url_for('dorm_page', dorm=dorm, _anchor='Dorm'))
+        for word in value.split():
             if isBadWord(word):
                 flash("Looks like our filters didn't accept your message. Please try again!")
                 return redirect(url_for('dorm_page', dorm=dorm, _anchor='Dorm'))
