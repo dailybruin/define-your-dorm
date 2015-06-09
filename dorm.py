@@ -66,7 +66,7 @@ dorms = {"rieber": Dorm("Rieber Court", 'http://dailybruin.com/images/2015/06/we
 def find_most_common(data):
     words = Counter()
     for entry in data:
-        words.update(entry.vals())
+        words.update([w.lower() for w in entry.vals()])
     most_common = words.most_common(10)
     if len(most_common) == 0:
         return most_common
