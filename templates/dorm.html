@@ -41,7 +41,7 @@
             {% else %}
                 <div class="lead">
                     <p>
-                    My home away from home is a/an <u>{{current_record.community_adjective}}</u> place. I've learned so much about <u>{{current_record.learned_thing_noun}}</u> and have met so many <u>{{current_record.people_adjective}}</u> people. The greatest part about living here is the <u>{{current_record.greatest_part}}</u>. Of all the amazing dining options available, my favorite place to eat would have to be <u>{{current_record.dining_noun}}</u>. If I had to describe my experience living on the hill, it would be <u>{{current_record.one_word}}</u>.</p>
+                    My home away from home is a/an <b>{{current_record.community_adjective}}</b> place. I've learned so much about <b>{{current_record.learned_thing_noun}}</b> and have met so many <b>{{current_record.people_adjective}}</b> people. The greatest part about living here is the <b>{{current_record.greatest_part}}</b>. Of all the amazing dining options available, my favorite place to eat would have to be <b>{{current_record.dining_noun}}</b>. If I had to describe my experience living on the hill, it would be <b>{{current_record.one_word}}</b>.</p>
                     <p class="pull-right">&mdash; {%if current_record.username[0] == '@' %}<a href="http://twitter.com/{{current_record.username[1:]}}" target="_blank">{{current_record.username}}</a>{% else %}{{current_record.username}}{% endif %}
                     </p><br />
                     <div class="col-lg-offset-5">
