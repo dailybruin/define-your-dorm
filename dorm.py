@@ -91,8 +91,7 @@ def find_most_common(data):
         minval = 0.0
     result = []
     for entry in most_common:
-        fontsize = max(
-            15.0, 35.0 * (float(entry[1]) - minval) / (maxval - minval))
+        fontsize = 15.0 + (float(entry[1]) / maxval * 20.0)
         result.append((entry[0], fontsize))
     random.shuffle(result)
     return result
